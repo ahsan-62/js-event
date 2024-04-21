@@ -7,6 +7,29 @@
   </head>
   <body>
     <h1 id="title">Event,EventHndler,AddEventListener</h1>
+    <button onclick="alert('hello')" type="button">Click Here</button>
+    <button
+      title="This is Click Here-2"
+      onclick="console.log('hello')"
+      type="button"
+    >
+      Click Here-2
+    </button>
+
+    <button onclick="document.body.style.backgroundColor='red'" type="button">
+      Color RED
+    </button>
+    <button onclick="yellowColor()" type="button">Color Yellow</button>
+    <button id="green" type="button">Color Green</button>
+
+    <button id="blue" type="button">Color Blue</button>
+    <script src="event.js"></script>
+
+    <script>
+      function yellowColor() {
+        document.body.style.backgroundColor = "yellow";
+      }
+    </script>
   </body>
   <script>
     const title = document.getElementById("title");
