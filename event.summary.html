@@ -19,6 +19,8 @@
     <button id="addEvent" type="button">Click here by AddEventListener</button>
 
     <script>
+      //onclick
+
       function changeTitle() {
         const ahsan = document.getElementById("first-title");
         ahsan.innerText = "My changed title by Onclick attribute";
@@ -38,6 +40,8 @@
       document.getElementById("update").addEventListener("click", function () {
         const paragraph = document.getElementById("paragraph");
         paragraph.innerText = document.getElementById("input-field").value;
+
+        document.getElementById("input-field").value = "";
       });
     </script>
   </body>
