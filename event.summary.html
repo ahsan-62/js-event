@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=" />
+    <title>Event Summary</title>
+  </head>
+  <body>
+    <h1 id="first-title">My Default Title</h1>
+    <h5 id="second-title">Here is my second title</h5>
+    <p id="paragraph">My first paragraph</p>
+    <input id="input-field" type="text" />
+    <button id="update" type="button" s>Updated</button>
+    <br />
+    <br />
+    <br />
+    <button onclick="changeTitle()" type="button">Click here by Onclick</button>
+
+    <button id="addEvent" type="button">Click here by AddEventListener</button>
+
+    <script>
+      function changeTitle() {
+        const ahsan = document.getElementById("first-title");
+        ahsan.innerText = "My changed title by Onclick attribute";
+      }
+
+      //By addEventListener
+
+      document
+        .getElementById("addEvent")
+        .addEventListener("click", function () {
+          const ahsan = document.getElementById("second-title");
+          ahsan.innerText = "My changed title by AddEventListener";
+        });
+
+      //input -field text changed
+
+      document.getElementById("update").addEventListener("click", function () {
+        const paragraph = document.getElementById("paragraph");
+        paragraph.innerText = document.getElementById("input-field").value;
+      });
+    </script>
+  </body>
+</html>
