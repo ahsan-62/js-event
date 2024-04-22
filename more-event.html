@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Like delete confirmation button</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Github Like delete confirmation button</h1>
+    <input id="input-field" type="text" />
+    <br />
+    <button id="delete-btn" type="button">Delete</button>
+
+    <br />
+    <script>
+      /* document
+        .getElementById("input-field")
+        .addEventListener("keypress", function (event) {
+          console.log(event.target.value);
+        });
+      document
+        .getElementById("input-field")
+        .addEventListener("keyup", function (event) {
+          console.log(event.target.value);
+        });
+      document
+        .getElementById("input-field")
+        .addEventListener("keydown", function (event) {
+          console.log(event.target.value);
+        });
+        */
+      document
+        .getElementById("delete-btn")
+        .addEventListener("mouseenter", function () {
+          console.log("Event Trigered on mouse Enter");
+        });
+      document
+        .getElementById("input-field")
+        .addEventListener("focus", function () {
+          console.log("Event Trigered on focus");
+        });
+      document
+        .getElementById("input-field")
+        .addEventListener("blur", function () {
+          console.log("Event Trigered on blur");
+        });
+    </script>
+  </body>
+</html>
