@@ -7,9 +7,31 @@
   </head>
   <body>
     <h1>Github deleted System</h1>
-    <h3>Here is My Post</h3>
+    <h3 id="post-title">Here is My Post</h3>
     <input type="text" id="input-field" />
     <br />
-    <button type="button">Delete</button>
+    <button id="delete-btn" type="button" disabled>Delete</button>
+
+    <script>
+      document
+        .getElementById("input-field")
+        .addEventListener("keyup", function (event) {
+          const inputValue = event.target.value;
+          if (inputValue == "delete") {
+            document.getElementById("delete-btn").removeAttribute("disabled");
+          } else {
+            document
+              .getElementById("delete-btn")
+              .setAttribute("disabled", true);
+          }
+        });
+
+      document
+        .getElementById("delete-btn")
+        .addEventListener("click", function () {
+          //document.getElementById("post-title").innerText = " ";
+          document.getElementById("post-title").style.display = "none";
+        });
+    </script>
   </body>
 </html>
