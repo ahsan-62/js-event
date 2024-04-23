@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegation</title>
+  </head>
+  <body>
+    <section>
+      <h3>My List</h3>
+      <ul id="list-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Accusamus, officia.</li>
+        <li class="item">Deserunt, voluptas.</li>
+      </ul>
+
+      <br />
+
+      <input type="text" id="input-field" />
+      <button id="add-btn" type="button">Add Item</button>
+    </section>
+
+    <script>
+      const list = document.getElementById("list-container");
+      list.addEventListener("click", function (e) {
+        e.target.parentNode.removeChild(e.target);
+      });
+
+      const inputField = document.getElementById("input-field");
+      inputField.addEventListener("keyup", function (e) {
+        const valueList = e.target.value;
+        console.log(valueList);
+      });
+
+      const addBtn = document.getElementById("add-btn");
+      addBtn.addEventListener("click", function (e) {
+        const valueList = document.getElementById("input-field").value;
+        const li = document.createElement("li");
+        li.innerText = valueList;
+        list.appendChild(li);
+        document.getElementById("input-field").value = "";
+      });
+    </script>
+  </body>
+</html>

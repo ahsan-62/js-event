@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling,capturing and Propagation</title>
+  </head>
+  <body id="body">
+    <section id="parent">
+      <h1>I am parent</h1>
+      <ul>
+        <li id="item-1">Lorem, ipsum.</li>
+        <li id="item-2">Vitae, molestiae.</li>
+        <li id="item-3">A, expedita?</li>
+      </ul>
+    </section>
+    <script>
+      document.getElementById("item-1").addEventListener("click", function (e) {
+        console.log("item-1 clicked");
+        // e.stopPropagation();
+        e.stopImmediatePropagation();
+      });
+      document.getElementById("item-1").addEventListener("click", function (e) {
+        console.log("item-1 second clicked");
+      });
+      document.getElementById("item-1").addEventListener("click", function (e) {
+        console.log("item-1 third clicked");
+      });
+
+      document.getElementById("parent").addEventListener("click", function (e) {
+        console.log("parent clicked");
+      });
+      document.getElementById("body").addEventListener("click", function (e) {
+        console.log("body clicked"), true;
+      });
+    </script>
+  </body>
+</html>
